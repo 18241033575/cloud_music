@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/mine/mine",
+    "pages/video/video",
+    "pages/village/village",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#dc2c1f",
+    "navigationBarTitleText": "音乐",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/ic_home_def.png",
+        "selectedIconPath": "/images/ic_home_act.png"
+      },
+      {
+        "pagePath": "pages/village/village",
+        "text": "云村",
+        "iconPath": "/images/ic_menu_def.png",
+        "selectedIconPath": "/images/ic_menu_act.png"
+      },
+      {
+        "pagePath": "pages/video/video",
+        "text": "发现",
+        "iconPath": "/images/ic_discover_def.png",
+        "selectedIconPath": "/images/ic_discover_act.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/ic_personal_def.png",
+        "selectedIconPath": "/images/ic_personal_act.png"
+      }
+    ]
+  }
+}

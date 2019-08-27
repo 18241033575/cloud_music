@@ -1,0 +1,8 @@
+/* pages/home/home.wxss */
+.banner{
+  margin: 20rpx auto;
+  width: 700rpx;
+  height: 320rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
