@@ -1,16 +1,40 @@
 <!--pages/home/home.wxml-->
 <view class='container'>
+  <!-- banner -->
   <swiper 
-    class='banner'
-    indicator-dots="true" 
+    class='banner' 
+    indicator-dots="true"
     autoplay="true" 
-    interval="3000"
+    interval="3000" 
     indicator-active-color="#dc2c1f"
-  >
+   >
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      <swiper-item class='swiper-item'>
+        <image src="{{item.imageUrl}}" class="slide-image" width="355" height="150" />
       </swiper-item>
     </block>
   </swiper>
+  <!-- category -->
+  <view class='category'>
+    <view class='cate_cell'>
+      <image src='/images/ic_menu_01.png'></image>
+      <view>每日推荐</view>
+    </view>
+     <view class='cate_cell'>
+      <image src='/images/ic_menu_02.png'></image>
+      <view>歌单</view>
+    </view>
+     <view class='cate_cell'>
+      <image src='/images/ic_menu_03.png'></image>
+      <view>排行榜</view>
+    </view>
+     <view class='cate_cell'>
+      <image src='/images/ic_menu_04.png'></image>
+      <view>电台</view>
+    </view>
+     <view class='cate_cell'>
+      <image src='/images/ic_menu_05.png'></image>
+      <view>直播</view>
+    </view>
+  </view>
 </view>
