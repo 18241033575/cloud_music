@@ -1,0 +1,15 @@
+<!--pages/ranking/ranking.wxml-->
+<view class='container'>
+  <navigator url='/pages/sheetList/sheetList?id={{item.id}}' class='sheet_cell' hover-class='sheet_hover' wx:for="{{ comData }}" wx:key="{{ index }}">
+    <view class='sheet_img'>
+      <image lazy-load='true' src='{{ item.coverImgUrl }}' mode='scaleToFill'>
+
+      </image>
+      <text>{{ item.updateFrequency }}</text>
+    </view>
+    <view class='desc'>
+      <view>{{ item.name }}</view>
+      <view class='title'>{{ item.description }}</view>
+    </view>
+  </navigator>
+</view>

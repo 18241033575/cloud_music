@@ -1,45 +1,27 @@
 import { reqUrl } from '../../utils/common.js'
-
-// pages/home/home.js
+// pages/ranking/ranking.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [],
-    commendSongs: []
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let params = {}
-    params.url = '/banner'
-    reqUrl(params).then((res)=>{
-        this.setData({
-          imgUrls: res.data.banners
-        })
-    });
-    let songs = {}
-    params.url = '/personalized?limit=6';
+    params.url = '/toplist'
     reqUrl(params).then((res) => {
       this.setData({
-        commendSongs: res.data.result
+        comData: res.data.list
       })
     });
   },
 
-  songsSheet(){
-    wx.navigateTo({
-      url: '/pages/songsSheet/songsSheet',
-    })
-  },
-  songsRanking() {
-    wx.navigateTo({
-      url: '/pages/ranking/ranking',
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

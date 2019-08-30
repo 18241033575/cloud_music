@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/songsSheet/songsSheet",
+    "pages/ranking/ranking",
+    "pages/sheetList/sheetList",
     "pages/mine/mine",
     "pages/video/video",
     "pages/village/village",
