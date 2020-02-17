@@ -1,2 +1,17 @@
 <!--pages/village/village.wxml-->
-<text>pages/village/village.wxml</text>
+<view class='container'>
+  <view class='nav'>
+    <text class='active'>电台</text>
+    <text>关注</text>
+  </view>
+  <view class='det'>
+    <view class='box_cell'>
+      <view class="det_box">
+        <view class='box_title'>精彩节目推荐</view>
+        <view class="cell">
+
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

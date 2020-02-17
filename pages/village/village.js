@@ -1,4 +1,6 @@
 // pages/village/village.js
+import { reqUrl } from '../../utils/common.js'
+
 Page({
 
   /**
@@ -12,7 +14,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let params = {}
+    params.url = '/program/recommend'
+    reqUrl(params).then((res) => {
+      console.log(res) 
+    });
   },
 
   /**

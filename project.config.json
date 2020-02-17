@@ -14,11 +14,13 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.8.1",
 	"appid": "wx11a246401601dbf2",
-	"projectname": "cloud_music",
+	"projectname": "miniprogram-1",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

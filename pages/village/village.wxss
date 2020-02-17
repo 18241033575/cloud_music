@@ -1,1 +1,28 @@
 /* pages/village/village.wxss */
+.container {
+
+}
+/* 头部导航 */
+.nav {
+  position: sticky;
+  top: 0;
+  line-height: 44px;
+  background-color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+.nav text {
+  padding: 9px 5px;
+}
+.nav text:first-child {
+  margin-right: 30px;
+}
+.active {
+  color: #dc2c1f;
+  border-bottom: 1px solid #dc2c1f;
+}
+.det {
+  background-color: #f9f9f9;
+}
+
+/* 内容详情 */

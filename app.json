@@ -1,12 +1,13 @@
 {
   "pages": [
-    "pages/home/home",
+    "pages/village/village",
+  
+    "pages/home/home", 
     "pages/songsSheet/songsSheet",
     "pages/ranking/ranking",
     "pages/sheetList/sheetList",
     "pages/mine/mine",
     "pages/video/video",
-    "pages/village/village",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -20,7 +21,7 @@
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "首页",
+        "text": "发现",
         "iconPath": "/images/ic_home_def.png",
         "selectedIconPath": "/images/ic_home_act.png"
       },
@@ -32,7 +33,7 @@
       },
       {
         "pagePath": "pages/video/video",
-        "text": "发现",
+        "text": "视频",
         "iconPath": "/images/ic_discover_def.png",
         "selectedIconPath": "/images/ic_discover_act.png"
       },
@@ -43,5 +44,6 @@
         "selectedIconPath": "/images/ic_personal_act.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
