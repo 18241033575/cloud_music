@@ -26,3 +26,24 @@
 }
 
 /* 内容详情 */
+.box_title {
+  padding: 0 9px;
+  line-height: 40px;
+}
+.box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.cell{
+  margin-bottom: 10px;
+  padding: 0 9px;
+  width: 50%;
+  height: 120px;
+  box-sizing: border-box;
+}
+.cell image {
+  width: 100%;
+  height: 100%;
+}

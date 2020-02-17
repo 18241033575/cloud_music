@@ -8,8 +8,10 @@
     <view class='box_cell'>
       <view class="det_box">
         <view class='box_title'>精彩节目推荐</view>
-        <view class="cell">
-
+        <view class="box">
+          <view class="cell" wx:for="{{radioList}}" wx:key="index">
+            <image src="{{item.coverUrl}}" class="slide-image" width="355" height="150" />
+          </view>
         </view>
       </view>
     </view>

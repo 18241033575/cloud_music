@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    radioList: []
   },
 
   /**
@@ -17,7 +17,9 @@ Page({
     let params = {}
     params.url = '/program/recommend'
     reqUrl(params).then((res) => {
-      console.log(res) 
+      this.setData({
+        radioList: res.data.programs
+      })
     });
   },
 
