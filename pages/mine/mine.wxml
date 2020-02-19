@@ -1,2 +1,19 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="container">
+  <view class="msg">
+    <view class="user_msg">
+      <image src="/images/avatar.jpg" class="avatar"></image>
+      <view >
+        <view class="name">陪日出-看日落</view>
+        <view class="level">lv.1</view>
+      </view>
+      
+    </view>
+    <view class="vip">
+        开通黑胶VIP >
+      </view>
+  </view>
+  <view class="use_nav">
+    
+  </view>
+</view>

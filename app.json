@@ -1,20 +1,20 @@
 {
   "pages": [
-    "pages/village/village",
-  
+    "pages/mine/mine",
+    "pages/video/video",
     "pages/home/home", 
     "pages/songsSheet/songsSheet",
     "pages/ranking/ranking",
     "pages/sheetList/sheetList",
-    "pages/mine/mine",
-    "pages/video/video",
+    "pages/village/village",
+   
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#dc2c1f",
-    "navigationBarTitleText": "音乐",
+    "navigationBarTitleText": "悦享音乐",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

@@ -7,7 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    radioList: []
+    radioList: [],
+    diskList: [],
+    navList: [{ id: 1, name: '电台' }, { id: 2, name: '新碟' },],
+    activeId: 1
   },
 
   /**
@@ -19,6 +22,14 @@ Page({
     reqUrl(params).then((res) => {
       this.setData({
         radioList: res.data.programs
+      })
+    });
+    let diskParams = {}
+    diskParams.url = '/top/album?offset=0&limit=10'
+    reqUrl(diskParams).then((res) => {
+      console.log(res)
+      this.setData({
+        diskList: res.data.albums
       })
     });
   },
@@ -70,5 +81,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  // 导航切换
+  navChange(event) {    
+    this.setData({
+      activeId: event.currentTarget.dataset.id
+    })
   }
 })

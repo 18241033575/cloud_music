@@ -1,16 +1,29 @@
 <!--pages/village/village.wxml-->
 <view class='container'>
   <view class='nav'>
-    <text class='active'>电台</text>
-    <text>关注</text>
+    <text  wx:for="{{navList}}" wx:key="index" class='{{  item.id=== activeId ? "active" : ""}}' data-id="{{item.id}}" bindtap="navChange">{{ item.name }}</text>
   </view>
-  <view class='det'>
+  <view class='det' style="margin-left:{{  (1 - activeId) * 100 + '%' }}">
     <view class='box_cell'>
       <view class="det_box">
         <view class='box_title'>精彩节目推荐</view>
         <view class="box">
           <view class="cell" wx:for="{{radioList}}" wx:key="index">
             <image src="{{item.coverUrl}}" class="slide-image" width="355" height="150" />
+            <view class="radio_name">{{item.name}} </view>
+            <view class="desc">{{item.description}} </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='box_cell'>
+      <view class="det_box">
+        <view class='box_title'>新碟推荐</view>
+        <view class="box">
+          <view class="cell" wx:for="{{diskList}}" wx:key="index">
+            <image src="{{item.picUrl}}" class="slide-image" width="355" height="150" />
+            <view class="radio_name">{{item.name}} </view>
+            <view class="desc">{{item.company}} </view>
           </view>
         </view>
       </view>

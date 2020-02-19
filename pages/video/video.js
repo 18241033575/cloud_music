@@ -1,18 +1,40 @@
 // pages/video/video.js
+import { reqUrl } from '../../utils/common.js'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    navList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let params = {}
+    params.url = '/video/group/list'
+    reqUrl(params).then((res) => {
+      this.setData({
+        navList: res.data.data
+      })
+      let detParams = {};
+      console.log(res.data.data)
+      params.url = '/video/group?id=' + res.data.data[50].id
+      reqUrl(params).then((ret) => {
+        console.log(ret )
+      })
+    });
+    // let diskParams = {}
+    // diskParams.url = '/top/album?offset=0&limit=10'
+    // reqUrl(diskParams).then((res) => {
+    //   console.log(res)
+    //   this.setData({
+    //     diskList: res.data.albums
+    //   })
+    // });
   },
 
   /**

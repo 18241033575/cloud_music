@@ -1,2 +1,11 @@
 <!--pages/video/video.wxml-->
-<text>pages/video/video.wxml</text>
+<view class="container"> 
+  
+  <scroll-view scroll-x >
+    <view class="nav_list">
+      <view  class="nav_cell {{ item.id === 243123 ? 'active' : '' }}" wx:for="{{ navList }}" wx:key="index">
+        {{ item.name }}
+      </view>
+    </view>
+  </scroll-view>
+</view>
