@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userNav: [
+      { url: '/images/download.png', name: '本地音乐'},
+      { url: '/images/download.png', name: '本地音乐' },
+      { url: '/images/download.png', name: '本地音乐' },
+      { url: '/images/download.png', name: '本地音乐' },
+      { url: '/images/download.png', name: '本地音乐' }
+      ]
   },
 
   /**
