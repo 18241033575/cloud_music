@@ -1,4 +1,5 @@
 // pages/mine/mine.js
+import { reqUrl } from '../../utils/common.js'
 Page({
 
   /**
@@ -6,11 +7,11 @@ Page({
    */
   data: {
     userNav: [
-      { url: '/images/download.png', name: '本地音乐'},
-      { url: '/images/download.png', name: '本地音乐' },
-      { url: '/images/download.png', name: '本地音乐' },
-      { url: '/images/download.png', name: '本地音乐' },
-      { url: '/images/download.png', name: '本地音乐' }
+      { url: '/images/music.png', name: '本地音乐'},
+      { url: '/images/down.png', name: '下载管理' },
+      { url: '/images/video.png', name: '我的电台' },
+      { url: '/images/star.png', name: '我的收藏' },
+      { url: '/images/focus.png', name: '关注新歌' }
       ]
   },
 
@@ -18,7 +19,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let params = {}
+    params.url = '/personalized/newsong'
+    reqUrl(params).then((res) => {
+      console.log(res)
+      this.setData({
+        newSongs: res.data.result
+      })
+    });
   },
 
   /**

@@ -1,7 +1,10 @@
 /* pages/mine/mine.wxss */
 .container {
-  padding: 0 7px;
-  background-color: #555;
+  
+}
+.bg {
+  padding: 0 1em;
+  background-color: rgb(34, 34, 34);
 }
 .msg {
   display: flex;
@@ -50,8 +53,25 @@
   font-size: 12px;
   color: #ddd;
 }
+.nav_icon {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 12px;
+}
 .user_cell image {
-  padding: 0 10%;
-  width: 80%;
-  height: 48px;
+  width: 24px;
+  height: 24px;
+}
+.new_songs {
+  position: sticky;
+  top: 0;
+  margin-top: -20px;
+  padding: 0 1em;
+  height: 100px;
+  border-radius: 20px 20px 0 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+.title {
+  line-height: 36px;
 }
