@@ -5,7 +5,8 @@
       <view class="user_msg">
         <image src="/images/avatar.jpg" class="avatar"></image>
         <view>
-          <view class="name">陪日出-看日落</view>
+        <!-- 陪日出-看日落 -->
+          <view class="name" bindlongtap="login">点击登录</view> 
           <view class="level">lv.1</view>
         </view>
 
@@ -31,8 +32,9 @@
       推荐新音乐
     </view>
     <view class="songs">
-      <view class="cell">
-      
+      <view class='cell' wx:for="{{ newSongs }}" wx:key="{{ index }}">
+        <image src='{{ item.picUrl }}'></image>
+        <view class='desc'>{{ item.name }}</view>
       </view>
     </view>
   </view>

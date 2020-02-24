@@ -1,0 +1,29 @@
+/* pages/login/login.wxss */
+.cell {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.cell label {
+  margin-right: 15px;
+  min-width: 60px;
+}
+.cell input {
+  flex-grow: 1;
+  padding-left: 15px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+}
+.btn {
+  margin: 20px auto 0;
+  width: 120px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #3296FA;
+}
+.btn_hover {
+  transition: 0.01s;
+  opacity: 0.8;
+}

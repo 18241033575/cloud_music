@@ -1,4 +1,4 @@
-// pages/mine/mine.js
+// pages/login/login.js
 import { reqUrl } from '../../utils/common.js'
 Page({
 
@@ -6,28 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userNav: [
-      { url: '/images/music.png', name: '本地音乐'},
-      { url: '/images/down.png', name: '下载管理' },
-      { url: '/images/video.png', name: '我的电台' },
-      { url: '/images/star.png', name: '我的收藏' },
-      { url: '/images/focus.png', name: '关注新歌' }
-      ],
-    newSongs: []
+    account: '',
+    password: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let params = {}
-    params.url = '/personalized/newsong'
-    reqUrl(params).then((res) => {
-      console.log(res)
-      this.setData({
-        newSongs: res.data.result
-      })
-    });
+
   },
 
   /**
@@ -79,10 +66,37 @@ Page({
 
   },
 
+  getPhone() {
+    console.log(1)
+  },
+  getAccountInput(e) {
+    this.account = e.detail.value;
+  },
+  getAccountValue() {
+    this.getSaveSearchValue('account', this.account)
+  },
+  getPasswordInput(e) {
+    this.password = e.detail.value.trim();
+  },
+  getPasswordValue() {
+    this.getSaveSearchValue('password', this.password)
+  },
+  // 存值入栈
+  getSaveSearchValue(name, value) {
+    var data = {};
+    data[name] = value;
+    this.setData(data)
+  },
 
   login() {
-    wx.navigateTo({
-      url: '/pages/login/login',
-    })
+    if(true) {
+      let params = {}
+      params.url = '/login/cellphone?phone=' + this.data.account + '&password=' + this.data.password
+      reqUrl(params).then((res) => {
+        console.log(res)
+      });
+    }else {
+        
+    }
   }
 })

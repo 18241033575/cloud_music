@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="cell">
+    <label>手机号: </label>
+    <input class="phone" type="number" maxlength="11" value="{{account}}" placeholder="请输入手机号" bindblur="getAccountValue" bindinput="getAccountInput"></input>
+  </view>
+   <view class="cell">
+    <label>密码: </label>
+    <input class="password" value="{{password}}" maxlength="16" type="password" placeholder="请输入密码" bindinput="password" bindblur="getPasswordValue" bindinput="getPasswordInput"></input>
+  </view>
+  <view class="btn" hover-class="btn_hover" bindtap="login">
+    登  录
+  </view>
+</view>
