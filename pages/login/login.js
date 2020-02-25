@@ -1,5 +1,7 @@
 // pages/login/login.js
-import { reqUrl } from '../../utils/common.js'
+import {
+  reqUrl
+} from '../../utils/common.js'
 Page({
 
   /**
@@ -13,56 +15,56 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
@@ -89,14 +91,46 @@ Page({
   },
 
   login() {
-    if(true) {
+
+    if (/^1[3456789]\d{9}$/.test(this.data.account) && this.data.password) {
       let params = {}
       params.url = '/login/cellphone?phone=' + this.data.account + '&password=' + this.data.password
-      reqUrl(params).then((res) => {
-        console.log(res)
-      });
-    }else {
-        
+    
+        reqUrl(params).then((res) => {
+          console.log(res)
+          if (res.statusCode === 200) {
+            try {
+              wx.setStorageSync('USER', res.data);
+              wx.showToast({
+                title: '登录成功',
+                icon: 'none',
+                duration: 2000
+              })
+              wx.switchTab({
+                url: "/pages/mine/mine"
+              })
+            } catch (e) {
+              wx.showToast({
+                title: '本地信息设置失败',
+                icon: 'none',
+                duration: 2000
+              })
+            }
+
+          }else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        });
+    } else {
+      wx.showToast({
+        title: '手机号或密码错误',
+        icon: 'none',
+        duration: 2000
+      })
     }
   }
 })

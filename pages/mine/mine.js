@@ -13,7 +13,10 @@ Page({
       { url: '/images/star.png', name: '我的收藏' },
       { url: '/images/focus.png', name: '关注新歌' }
       ],
-    newSongs: []
+    newSongs: [],
+    name: '点击登录',
+    userInfo: {},
+    avatarUrl: '/images/avatar.jpg'
   },
 
   /**
@@ -41,7 +44,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let user = wx.getStorageSync('USER');
+    if(user) {
+      this.setData({
+        userInfo: user,
+        name: user.profile.nickname,
+        avatarUrl: user.profile.avatarUrl
+      })
+    }
   },
 
   /**
@@ -81,8 +91,10 @@ Page({
 
 
   login() {
-    wx.navigateTo({
-      url: '/pages/login/login',
-    })
+    if(!this.data.userInfo.account) {
+      wx.navigateTo({
+        url: '/pages/login/login',
+      })
+    }
   }
 })

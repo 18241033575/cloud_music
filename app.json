@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/mine/mine",
     "pages/video/video",
     "pages/home/home", 
@@ -10,7 +9,9 @@
     "pages/village/village",
    
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/login/login"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
