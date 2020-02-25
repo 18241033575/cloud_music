@@ -11,4 +11,7 @@
   <view class="btn" hover-class="btn_hover" bindtap="login">
     登  录
   </view>
+  <view class="btn_back" hover-class="btn_hover" bindtap="back">
+    返回首页
+  </view>
 </view>

@@ -132,5 +132,10 @@ Page({
         duration: 2000
       })
     }
+  },
+  back() {
+    wx.switchTab({
+      url: "/pages/home/home"
+    })
   }
 })
