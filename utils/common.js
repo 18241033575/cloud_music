@@ -4,7 +4,9 @@ export let reqUrl =(param)=> {
       wx.request({
         url: host + param.url,
         data: '',
-        header: {},
+        header: {
+          token: param
+        },
         method: 'GET',
         dataType: 'json',
         responseType: 'text',
