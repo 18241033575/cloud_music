@@ -21,8 +21,9 @@ Page({
         navList: res.data.data
       })
       let detParams = {};
-      console.log(res.data.data)
-      params.url = '/video/group?id=' + res.data.data[50].id
+      let user = wx.getStorageSync('USER');
+      params.token = user.token;
+      params.url = '/video/group?id=' + res.data.data[50].id + '&time=' + new Date().getTime()
       reqUrl(params).then((ret) => {
         console.log(ret )
       })

@@ -5,7 +5,8 @@ export let reqUrl =(param)=> {
         url: host + param.url,
         data: '',
         header: {
-          token: param
+          'context-type': 'application/json',
+          'token': param.token
         },
         method: 'GET',
         dataType: 'json',
