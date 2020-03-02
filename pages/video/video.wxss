@@ -20,7 +20,7 @@
   margin-top: 20px;
   padding: 0 5%;
   width: 100%;
-  height: 120px;
+  height: 162px;
   box-sizing: border-box;
 }
 

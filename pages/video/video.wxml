@@ -11,7 +11,7 @@
   <!-- 视频列表 -->
   <view class="video_list">
     <view class="cell">
-      <video src="http://vodkgeyttp9.vod.126.net/vodkgeyttp8/5N1MocZL_2224028135_uhd.mp4?ts=1583139598&rid=D3012662F5B29C2F94F66ECE17D30D44&rl=3&rs=qozecfCJtzEeqcWwCLMrygBLgXuysAZX&sign=d716b0f6db0f117f24043be44b77e118&ext=iCYJXYUm5ej8P6MCqqmHxkiOKotRWdSzMI4smOxWcU1LTkKY4DExEbjMdN0AMSnWKSrJhowztKvfNaGb45EyKGa39fUmcQnGi42NEqmOV4mzxUYQYsEDD%2BSmRRlEN6cFS0Zz13PMILBP0lrDzUsTgc1Vv0uGGok4lbW%2FgDg2TJGZRLxJvpFSWubsWiwlk%2FLHPgG3jZ4rt3VcZ4LnUKUvKxZYy8McJvTFrmijsQQ9d8jbMVuGW2EsxfK4UgwP%2Blyx"></video>   
+      <video src="http://vodkgeyttp9.vod.126.net/vodkgeyttp8/5N1MocZL_2224028135_uhd.mp4?ts=1583152042&rid=D3012662F5B29C2F94F66ECE17D30D44&rl=3&rs=iARtguXORKQRybYRVJzYmCssEmVaNjgH&sign=5867ccd9ef744c99601eadbf5d1d8f05&ext=iCYJXYUm5ej8P6MCqqmHxkiOKotRWdSzMI4smOxWcU1LTkKY4DExEbjMdN0AMSnWKSrJhowztKvfNaGb45EyKGa39fUmcQnGi42NEqmOV4mzxUYQYsEDD%2BSmRRlEN6cFS0Zz13PMILBP0lrDzUsTgc1Vv0uGGok4lbW%2FgDg2TJE3CrvcB%2FiJTd3GgphokMcWCMFqccGacbnV7%2BHiwIhIcljy0bIUMsmCyFsA%2B0b0j0%2B1U236L3F3aBB0gogglu%2Fd"></video>   
       <view>这是简介内容</view> 
     </view>
   </view>
