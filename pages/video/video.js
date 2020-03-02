@@ -7,27 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navList: []
+    navList: [],
+    currentId: 243123
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let params = {}
-    params.url = '/video/group/list'
-    reqUrl(params).then((res) => {
-      this.setData({
-        navList: res.data.data
-      })
-      let detParams = {};
-      let user = wx.getStorageSync('USER');
-      params.token = user.token;
-      params.url = '/video/group?id=' + res.data.data[50].id + '&time=' + new Date().getTime()
-      reqUrl(params).then((ret) => {
-        console.log(ret )
-      })
-    });
+    
     // let diskParams = {}
     // diskParams.url = '/top/album?offset=0&limit=10'
     // reqUrl(diskParams).then((res) => {
@@ -55,6 +43,23 @@ Page({
       wx.navigateTo({
         url: '/pages/login/login',
       })
+    }else {
+      let params = {}
+      params.url = '/video/group/list'
+      reqUrl(params).then((res) => {
+        this.setData({
+          navList: res.data.data
+        })
+        let detParams = {};
+        let user = wx.getStorageSync('USER');
+        let cookie = wx.getStorageSync('COOKIE');
+        params.token = user.token;
+        params.cookie = cookie;
+        params.url = '/video/group?id=' + res.data.data[50].id + '&time=' + new Date().getTime()
+        reqUrl(params).then((ret) => {
+          console.log(ret)
+        })
+      });
     }
   },
 
@@ -91,5 +96,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  change(e) {
+    this.setData({
+      currentId: e.currentTarget.dataset.id
+    })
   }
 })

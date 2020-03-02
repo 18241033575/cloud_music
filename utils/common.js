@@ -6,7 +6,8 @@ export let reqUrl =(param)=> {
         data: '',
         header: {
           'context-type': 'application/json',
-          'token': param.token
+          'token': param.token,
+          'cookie': param.cookie
         },
         method: 'GET',
         dataType: 'json',
