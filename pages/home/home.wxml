@@ -10,7 +10,7 @@
   </swiper>
   <!-- category -->
   <view class='category'>
-    <view class='cate_cell'>
+    <view class='cate_cell' bindtap='dailyRecommend'>
       <image src='/images/ic_menu_01.png'></image>
       <view>每日推荐</view>
     </view>

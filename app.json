@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/home/home",
+    "pages/dailyRecommend/dailyRecommend",
     "pages/video/video",
     
     "pages/mine/mine",
-    "pages/home/home", 
     "pages/songsSheet/songsSheet",
     "pages/ranking/ranking",
     "pages/sheetList/sheetList",

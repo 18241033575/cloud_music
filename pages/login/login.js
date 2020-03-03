@@ -97,11 +97,9 @@ Page({
       params.url = '/login/cellphone?phone=' + this.data.account + '&password=' + this.data.password
     
         reqUrl(params).then((res) => {
-          console.log(res)
           if (res.statusCode === 200) {
             try {
               wx.setStorageSync('USER', res.data);
-              console.log(res.header["Set-Cookie"]);
               wx.setStorageSync('COOKIE', res.header["Set-Cookie"]);
               wx.showToast({
                 title: '登录成功',

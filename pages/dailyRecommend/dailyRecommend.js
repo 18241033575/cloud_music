@@ -1,59 +1,33 @@
+// pages/dailyRecommend/dailyRecommend.js
 import { reqUrl } from '../../utils/common.js'
-
-// pages/home/home.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [],
-    commendSongs: []
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 
+
     let params = {}
-    params.url = '/banner'
-    reqUrl(params).then((res)=>{
-        this.setData({
-          imgUrls: res.data.banners
-        })
-    });
-    let songs = {}
-    params.url = '/personalized?limit=6';
-    reqUrl(params).then((res) => {
-      this.setData({
-        commendSongs: res.data.result
-      })
-    });
-  },
-  // 每日推荐
-  dailyRecommend() {
     let user = wx.getStorageSync('USER');
-    if (!user) {
-      wx.navigateTo({
-        url: '/pages/login/login',
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/dailyRecommend/dailyRecommend',
-      })
-    }
+    let cookie = wx.getStorageSync('COOKIE');
+    params.token = user.token;
+    params.cookie = cookie;
+
+  
+    params.url = '/recommend/songs'
+    reqUrl(params).then((res) => {
+      console.log(res)
+    });
   },
-  // 歌单
-  songsSheet(){
-    wx.navigateTo({
-      url: '/pages/songsSheet/songsSheet',
-    })
-  },
-  // 排行榜
-  songsRanking() {
-    wx.navigateTo({
-      url: '/pages/ranking/ranking',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
