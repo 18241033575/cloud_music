@@ -8,7 +8,8 @@ Page({
    */
   data: {
     navList: [],
-    currentId: 243123
+    currentId: 243123,
+    videoList: []
   },
 
   /**
@@ -37,7 +38,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-      console.log(123456)
     let user = wx.getStorageSync('USER');
     if(!user) {
       wx.navigateTo({
@@ -50,15 +50,8 @@ Page({
         this.setData({
           navList: res.data.data
         })
-        let detParams = {};
-        let user = wx.getStorageSync('USER');
-        let cookie = wx.getStorageSync('COOKIE');
-        params.token = user.token;
-        params.cookie = cookie;
-        params.url = '/video/group?id=' + res.data.data[50].id + '&time=' + new Date().getTime()
-        reqUrl(params).then((ret) => {
-          console.log(ret)
-        })
+      
+        this.getVideo(res.data.data[50].id);
       });
     }
   },
@@ -97,10 +90,29 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 根据ID请求相应视频
+  getVideo(id) {
+    wx.showLoading({
+      title: '加载中',
+    })
+    let detParams = {};
+    let user = wx.getStorageSync('USER');
+    let cookie = wx.getStorageSync('COOKIE');
+    detParams.token = user.token;
+    detParams.cookie = cookie;
+    detParams.url = '/video/group?id=' + id
+    reqUrl(detParams).then((ret) => {
+      this.setData({
+        videoList: ret.data.datas
+      })
+      wx.hideLoading()
+    })
+  },
 
   change(e) {
     this.setData({
       currentId: e.currentTarget.dataset.id
     })
+    this.getVideo(e.currentTarget.dataset.id)
   }
 })
