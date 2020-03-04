@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    songList: [],
+    top: 0
   },
 
   /**
@@ -22,11 +23,16 @@ Page({
     params.token = user.token;
     params.cookie = cookie;
 
-  
-    // params.url = '/recommend/songs'
-    // reqUrl(params).then((res) => {
-    //   console.log(res)
-    // });
+
+    params.url = '/recommend/songs'
+    reqUrl(params).then((res) => {
+      console.log(res)
+      if (res.statusCode === 200) {
+        this.setData({
+          songList: res.data.data.dailySongs
+        })
+      }
+    });
   },
 
   /**
@@ -76,5 +82,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onPageScroll : function (e) {
+    this.setData({
+      top: e.scrollTop
+    })
+    console.log(this.data.top)
   }
 })
