@@ -1,4 +1,5 @@
 // pages/dailyRecommend/dailyRecommend.js
+// 如果没有ID则为每日推荐，有歌单ID为歌单详情页
 import { reqUrl } from '../../utils/common.js'
 Page({
 
@@ -22,10 +23,10 @@ Page({
     params.cookie = cookie;
 
   
-    params.url = '/recommend/songs'
-    reqUrl(params).then((res) => {
-      console.log(res)
-    });
+    // params.url = '/recommend/songs'
+    // reqUrl(params).then((res) => {
+    //   console.log(res)
+    // });
   },
 
   /**

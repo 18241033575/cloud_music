@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/home/home",
     "pages/dailyRecommend/dailyRecommend",
+    
+    "pages/home/home",
     "pages/video/video",
     
     "pages/mine/mine",

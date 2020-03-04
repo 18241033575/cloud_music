@@ -1,2 +1,29 @@
 <!--pages/dailyRecommend/dailyRecommend.wxml-->
-<text>pages/dailyRecommend/dailyRecommend.wxml</text>
+<!-- 歌单详情、每日推荐列表 -->
+<view class="container">
+  <!-- 背景图 -->
+  <view class="banner">
+    <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
+    <view class="date"><text class="day">04</text>/03</view>
+  </view>
+  <!-- 播放列表 -->
+  <view class="songList">
+    <view class="title">
+      <image src="/images/play.png"></image><text>播放全部</text> 
+    </view>
+    <view class="songBox">
+      <view class="cell">
+        <view>
+          图片
+        </view>
+        <view>
+          <view class="songName">歌曲名称超出隐藏</view>
+          <view class="singer">李荣浩</view>
+        </view>
+        <view>
+          播放图标
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
