@@ -1,15 +1,15 @@
 <!--pages/dailyRecommend/dailyRecommend.wxml-->
 <!-- 歌单详情、每日推荐列表 -->
-<scroll-view scroll-y="false" bindscroll="onPageScroll" style="height:100%;">
+<scroll-view  bindscroll="onPageScroll" style="height:100%;">
   <view class="container">
     <!-- 背景图 -->
     <view class="banner">
       <image src="{{ songList[0].album.blurPicUrl }}"></image>
       <view class="date">
-        <text class="day">04</text>/03</view>
+        <text class="day">{{ day }}</text> / {{ month }}</view>
     </view>
     <!-- 播放列表 -->
-    <view class="songList {{(top > 160)?'fixed_top':''}}">
+    <view class="songList">
       <view class="title">
         <image src="/images/play.png"></image>
         <text>播放全部</text>

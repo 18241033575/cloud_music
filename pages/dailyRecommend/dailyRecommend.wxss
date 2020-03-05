@@ -1,5 +1,7 @@
 /* pages/dailyRecommend/dailyRecommend.wxss */
-
+.container {
+  position: relative;
+}
 .banner {
   position: relative;
   width: 100%;
@@ -85,8 +87,4 @@
   width: 24px;
   height: 24px;
   vertical-align: middle;
-}
-.fixed_top {
-  position: absolute;
-  top: -10px;
 }

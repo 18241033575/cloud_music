@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/playSong/playSong",
     "pages/dailyRecommend/dailyRecommend",
     
     "pages/home/home",

@@ -1,0 +1,9 @@
+<!--pages/playSong/playSong.wxml-->
+<view class="container">
+  <view class="blur_bg">
+    <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
+  </view>
+  <view class="msg">
+    啦啦啦啦啦啦啦啦绿绿绿绿绿绿绿绿绿绿绿绿绿绿
+  </view>
+</view>

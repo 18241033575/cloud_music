@@ -8,15 +8,24 @@ Page({
    */
   data: {
     songList: [],
-    top: 0
+    top: 0,
+    month: '',
+    day: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 
+    // 获取日期
+    let date = new Date();
+    console.log(date.getDay());
+    this.setData({
+      month: ((date.getMonth() + 1) < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1),
+      day: (date.getDay() + 1 < 10 ? '0' + (date.getDay() + 1) : date.getDay() + 1)
+    })
 
+    // 请求数据
     let params = {}
     let user = wx.getStorageSync('USER');
     let cookie = wx.getStorageSync('COOKIE');
@@ -84,9 +93,8 @@ Page({
 
   },
   onPageScroll : function (e) {
-    this.setData({
-      top: e.scrollTop
-    })
-    console.log(this.data.top)
+    // this.setData({
+    //   top: e.scrollTop
+    // })
   }
 })
