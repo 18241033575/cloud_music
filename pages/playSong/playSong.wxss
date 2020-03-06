@@ -1,10 +1,12 @@
 /* pages/playSong/playSong.wxss */
+
 .container {
   position: relative;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
 }
+
 .blur_bg {
   position: absolute;
   left: 0;
@@ -12,15 +14,78 @@
   width: 100%;
   z-index: -1;
 }
+
 .blur_bg image {
   width: 100%;
   height: 100vh;
-  filter: blur(5px); 
+  filter: blur(5px);
 }
 
-.msg {
-   position: absolute;
+.content {
+  position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
   color: #fff;
+}
+
+/* 旋转封面 */
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.coverImg {
+  margin: 100px auto;
+  width: 200px;
+  height: 200px;
+  line-height: 200px;
+  border-radius: 100px;
+  background-color: #222;
+  text-align: center;
+  
+}
+
+.coverImg image {
+  margin-top: 40px;
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+}
+
+.playging {
+  animation: rotate 6s linear infinite;
+}
+.btn_group {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 80%;
+  height: 48px;
+}
+.btn_cell {
+}
+
+.btn_cell image {
+  width: 24px;
+  height: 24px;
+}
+.btn_cell .playImg {
+  width: 48px;
+  height: 48px;
+}
+.btn_cell .next_song {
+  width: 30px;
+  height: 30px;
+}
+.btn_cell .play_list {
+  width: 20px;
+  height: 20px;
 }

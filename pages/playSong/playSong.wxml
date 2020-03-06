@@ -3,7 +3,27 @@
   <view class="blur_bg">
     <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
   </view>
-  <view class="msg">
-    啦啦啦啦啦啦啦啦绿绿绿绿绿绿绿绿绿绿绿绿绿绿
+  <view class="content">
+    <view class="coverImg playging">
+      <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
+    </view>
+
+    <view class="btn_group">
+      <view class="btn_cell">
+        <image src="/images/listLoop.png"></image>
+      </view>
+       <view class="btn_cell">
+        <image src="/images/prevSong.png"></image>
+      </view>
+       <view class="btn_cell ">
+        <image class="playImg" src="/images/play.png"></image>
+      </view>
+       <view class="btn_cell">
+        <image class="next_song" src="/images/nextSong.png"></image>
+      </view>
+       <view class="btn_cell">
+        <image class="play_list" src="/images/playList.png"></image>
+      </view>
+    </view>
   </view>
 </view>
