@@ -34,6 +34,9 @@
   padding: 0 1rem;
   line-height: 36px;
 }
+.title_box {
+  display: inline-block;
+}
 .title image {
   margin-right: 10px;
   width: 24px;

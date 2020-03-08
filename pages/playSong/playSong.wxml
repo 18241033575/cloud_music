@@ -1,29 +1,52 @@
 <!--pages/playSong/playSong.wxml-->
 <view class="container">
   <view class="blur_bg">
-    <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
+    <image src="{{ bgBlurUrl }}"></image>
   </view>
   <view class="content">
-    <view class="coverImg playging">
-      <image src="https://p4.music.126.net/2zSNIqTcpHL2jIvU6hG0EA==/109951162868128395.jpg"></image>
+    <view class="coverImg {{ songListBgSign ? 'playging' : ''}}">
+      <image src="{{ bgUrl }}"></image>
     </view>
 
     <view class="btn_group">
       <view class="btn_cell">
         <image src="/images/listLoop.png"></image>
       </view>
-       <view class="btn_cell">
+      <view class="btn_cell">
         <image src="/images/prevSong.png"></image>
       </view>
-       <view class="btn_cell ">
+      <view class="btn_cell ">
         <image class="playImg" src="/images/play.png"></image>
       </view>
-       <view class="btn_cell">
+      <view class="btn_cell">
         <image class="next_song" src="/images/nextSong.png"></image>
       </view>
-       <view class="btn_cell">
+      <view class="btn_cell" bindtap="songList">
         <image class="play_list" src="/images/playList.png"></image>
       </view>
+    </view>
+  </view>
+  <view class="song_list_bg {{songListBgSign ? 'song_list_bg_sign' : ''}}" bindtap="listBgCancel">
+    <view class="song_list {{ songListSign ? '' : 'song_list_sign' }}" catchtap="stopProgragh">
+      <view class="title">
+        当前播放
+      </view>
+      <scroll-view scroll-y class="song_box">
+        <view 
+          class="song_cell {{ currentId === item.id ? 'song_cell_active' : '' }}" 
+          wx:for="{{ songList }}" 
+          wx:key="index"
+          catchtap="playing" 
+          data-id="{{ item.id }}"
+        >
+          <!-- <image></image> -->
+          <image src="{{ item.album.picUrl }}"></image>
+          <view class="song_name">
+            <text>{{ item.album.name }}</text>
+            <view class="song_singer">- {{ item.artists[0].name }}</view>
+          </view>
+        </view>
+      </scroll-view>
     </view>
   </view>
 </view>

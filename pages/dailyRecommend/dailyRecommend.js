@@ -96,5 +96,16 @@ Page({
     // this.setData({
     //   top: e.scrollTop
     // })
+  },
+  play(e) {
+    let id = e.currentTarget.dataset.id;
+    if(id) {
+      wx.setStorageSync('playList', { id: id, songs: this.data.songList })
+    }else {
+      wx.setStorageSync('playList', { id: this.data.songList[0].id, songs: this.data.songList })
+    }
+    wx.navigateTo({
+      url: '/pages/playSong/playSong',
+    })
   }
 })
