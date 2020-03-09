@@ -4,21 +4,24 @@
     <image src="{{ bgBlurUrl }}"></image>
   </view>
   <view class="content">
-    <view class="coverImg {{ songListBgSign ? 'playging' : ''}}">
+    <view class="coverImg {{ playFlag ? 'playging' : ''}}">
       <image src="{{ bgUrl }}"></image>
     </view>
 
     <view class="btn_group">
-      <view class="btn_cell">
-        <image src="/images/listLoop.png"></image>
+      <view class="btn_cell state" bindtap="modeChange">
+        <image class="{{ playMode === 0 ? 'image_show' : '' }}" src="/images/listLoop.png"></image>
+        <image class="{{ playMode === 1 ? 'image_show' : '' }}" src="/images/random.png"></image>
+        <image class="{{ playMode === 2 ? 'image_show' : '' }}" src="/images/simpleSong.png"></image>
       </view>
-      <view class="btn_cell">
+      <view class="btn_cell" bindtap="prevSong">
         <image src="/images/prevSong.png"></image>
       </view>
-      <view class="btn_cell ">
-        <image class="playImg" src="/images/play.png"></image>
+      <view class="btn_cell state" bindtap="playChange">
+        <image class="playImg {{ !playFlag ? 'image_show' : '' }}" src="/images/play.png"></image>
+        <image class="playImg {{ playFlag ? 'image_show' : '' }}" src="/images/pause.png"></image>
       </view>
-      <view class="btn_cell">
+      <view class="btn_cell" bindtap="nextSong">
         <image class="next_song" src="/images/nextSong.png"></image>
       </view>
       <view class="btn_cell" bindtap="songList">

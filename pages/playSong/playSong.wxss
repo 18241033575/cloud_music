@@ -70,7 +70,11 @@
   width: 80%;
   height: 48px;
 }
-.btn_cell {
+.btn_group .state image{
+  display: none;
+}
+.btn_group .state .image_show {
+  display: inline-block;
 }
 
 .btn_cell image {
@@ -107,9 +111,11 @@
   left: 10%;
   bottom: 0;
   margin: 0 auto;
+  padding: 0 12px;
   width: 80%;
   height: 60vh;
   background-color: #fff;
+  box-sizing: border-box;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   transition: 1s;
@@ -119,14 +125,11 @@
 }
 .song_box {
   height: calc(60vh - 44px);
-}
-.song_list {
-  padding: 0 12px;
-  box-sizing: border-box;
+  padding-bottom: 20px;
 }
 .song_cell {
   display: flex;
-  margin-top: 10px;
+  margin: 8px 0;
 
 }
 .song_cell image{

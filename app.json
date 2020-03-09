@@ -1,10 +1,10 @@
 {
   "pages": [
-   
+    "pages/playSong/playSong",
+    
     
     "pages/home/home",
     "pages/video/video",
-    "pages/playSong/playSong",
     "pages/dailyRecommend/dailyRecommend",
     "pages/mine/mine",
     "pages/songsSheet/songsSheet",
@@ -52,5 +52,9 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
 }
