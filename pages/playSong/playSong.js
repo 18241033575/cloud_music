@@ -16,7 +16,8 @@ Page({
     songName: '',
     playFlag: true,
     playMode: 0,
-    currentIndex: 1
+    currentIndex: 1,
+    listenFlag: false
   },
 
   /**
@@ -30,7 +31,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
@@ -55,7 +56,20 @@ Page({
     this.setData({
       currentId: index
     });
-    this.setBgUrl(this.data.songList[this.data.currentIndex - 1].id);
+    this.setBgUrl(this.data.songList[this.data.currentIndex - 1].id); 
+    if (this.listenFlag) {
+      setInterval(() => {
+        let index = wx.getStorageSync('songIndex');
+        if (index !== this.data.currentIndex) {
+          this.setData({
+            currentIndex: index
+          })
+          console.log(index);
+          this.setBgUrl(this.data.songList[index - 1].id)
+        }
+      }, 3000)
+    }
+    this.listenFlag = true;
   },
 
   /**
