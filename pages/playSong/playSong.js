@@ -1,5 +1,7 @@
-import { reqUrl } from '../../utils/common.js'
-import  AudioManager  from '../../lib/AudioManager.js'
+import {
+  reqUrl
+} from '../../utils/common.js'
+import AudioManager from '../../lib/AudioManager.js'
 // pages/playSong/playSong.js
 Page({
 
@@ -23,87 +25,109 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-   
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
+   
+
+
     let data = wx.getStorageSync('playList');
-    this.setData({
-      songList: data.songs,
-      currentId: data.id
-    });
-    this.setBgUrl(data.id);
-    this.getMusicUrl(data.id);
+    if (data && data.id) {
+      this.setData({
+        songList: data.songs,
+        currentId: data.id
+      });
+      this.setBgUrl(data.id);
+      this.getMusicUrl(data.id);
+
+      // 使用后将ID删除
+      data.id = undefined
+      wx.setStorageSync('playList', data)
+    }else {
+      let index = wx.getStorageSync('songIndex');
+      this.setData({
+        songList: data.songs,
+        currentId: index
+      });
+      this.setBgUrl(this.data.songList[index - 1].id);
+      this.getMusicUrl(this.data.songList[index - 1].id);
+    }
+  
     // 获取播放模式
     let mode = wx.getStorageSync('playMode');
     this.setData({
-      playMode: mode
+      playMode: mode || 0
     });
+    if (!mode) {
+      wx.setStorageSync('playMode', 0);
+    }
+    
 
     // 获取当前播放背景
     let index = wx.getStorageSync('songIndex');
     this.setData({
       currentId: index
     });
-    this.setBgUrl(this.data.songList[this.data.currentIndex - 1].id); 
-    if (this.listenFlag) {
-      setInterval(() => {
+    this.setBgUrl(this.data.songList[this.data.currentIndex - 1].id);
+    setInterval(() => {
+      if (this.listenFlag && index) {
+
         let index = wx.getStorageSync('songIndex');
         if (index !== this.data.currentIndex) {
           this.setData({
             currentIndex: index
           })
-          console.log(index);
           this.setBgUrl(this.data.songList[index - 1].id)
         }
-      }, 3000)
-    }
+      }
+    }, 3000)
     this.listenFlag = true;
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
   // 歌曲列表 
@@ -139,9 +163,8 @@ Page({
   },
   // 遍历设置背景色
   setBgUrl(id) {
-    console.log(this.data.currentId)
     for (let i = 0; i < this.data.songList.length; i++) {
-      if (this.data.songList[i].id === this.data.currentId) {
+      if (this.data.songList[i].id === id) {
         this.setData({
           bgUrl: this.data.songList[i].album.blurPicUrl,
           bgBlurUrl: this.data.songList[i].album.picUrl,
@@ -153,6 +176,7 @@ Page({
         })
       }
     }
+    wx.setStorageSync('songIndex', this.data.currentIndex)
   },
   // 请求音乐链接
   getMusicUrl(id) {
@@ -174,9 +198,9 @@ Page({
   },
   // 播放/暂停歌曲
   playChange() {
-    if(this.data.playFlag) {
+    if (this.data.playFlag) {
       AudioManager.stopSong();
-    }else {
+    } else {
       AudioManager.playSong();
     }
     this.setData({
@@ -185,10 +209,16 @@ Page({
   },
   // 上一曲
   prevSong() {
-    this.setData({
-      currentIndex: (this.data.currentIndex - 1) < 1 ? this.data.songList.length : this.data.currentIndex - 1,
-    
-    })
+    if(this.data.playMode === 1) {
+      this.setData({
+        currentIndex: Math.floor((Math.random() * this.data.songList.length) + 1)
+      })
+    }else {
+      this.setData({
+        currentIndex: (this.data.currentIndex - 1) < 1 ? this.data.songList.length : this.data.currentIndex - 1
+      })
+    }
+   
     this.setData({
       songName: this.data.songList[this.data.currentIndex - 1].name,
       currentId: this.data.songList[this.data.currentIndex - 1].id
@@ -199,10 +229,16 @@ Page({
   },
   // 下一曲
   nextSong() {
-    this.setData({
-      currentIndex: (this.data.currentIndex + 1) === this.data.songList.length ? 1 : (this.data.currentIndex + 1)
-    })
-    console.log(this.data.currentIndex)
+
+    if (this.data.playMode === 1) {
+      this.setData({
+        currentIndex: Math.floor((Math.random() * this.data.songList.length) + 1)
+      })
+    } else {
+      this.setData({
+        currentIndex: (this.data.currentIndex + 1) >= this.data.songList.length ? 1 : (this.data.currentIndex + 1)
+      })
+    }
     this.setData({
       songName: this.data.songList[this.data.currentIndex - 1].name,
       currentId: this.data.songList[this.data.currentIndex - 1].id

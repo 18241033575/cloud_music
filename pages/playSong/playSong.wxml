@@ -10,9 +10,9 @@
 
     <view class="btn_group">
       <view class="btn_cell state" bindtap="modeChange">
-        <image class="{{ playMode === 0 ? 'image_show' : '' }}" src="/images/listLoop.png"></image>
-        <image class="{{ playMode === 1 ? 'image_show' : '' }}" src="/images/random.png"></image>
-        <image class="{{ playMode === 2 ? 'image_show' : '' }}" src="/images/simpleSong.png"></image>
+        <image class="{{ playMode == '0' ? 'image_show' : '' }}" src="/images/listLoop.png"></image>
+        <image class="{{ playMode == '1' ? 'image_show' : '' }}" src="/images/random.png"></image>
+        <image class="{{ playMode == '2' ? 'image_show' : '' }}" src="/images/simpleSong.png"></image>
       </view>
       <view class="btn_cell" bindtap="prevSong">
         <image src="/images/prevSong.png"></image>

@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/playSong/playSong",
     
     
     "pages/home/home",
     "pages/video/video",
     "pages/dailyRecommend/dailyRecommend",
+    "pages/playSong/playSong",
+    
     "pages/mine/mine",
     "pages/songsSheet/songsSheet",
     "pages/ranking/ranking",
@@ -22,7 +23,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#dc2c1f",
     "navigationBarTitleText": "悦享音乐",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default"
   },
   "tabBar": {
     "list": [
