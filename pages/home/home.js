@@ -54,6 +54,18 @@ Page({
       url: '/pages/ranking/ranking',
     })
   },
+  // 电台 - 云村电台
+  village() {
+    wx.switchTab({
+      url: '/pages/village/village',
+    })
+  },
+  // 直播 - 视频
+  video() {
+    wx.switchTab({
+      url: '/pages/video/video',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

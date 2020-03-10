@@ -154,8 +154,24 @@ Page({
     }, 500)
   },
   // 播放
-  playing() {
-    console.log('播放音乐')
+  playing(e) {
+    this.setData({
+      currentIndex: e.currentTarget.dataset.index + 1
+    })
+    this.setBgUrl(e.currentTarget.dataset.id);
+    this.getMusicUrl(e.currentTarget.dataset.id);
+    this.setData({
+      songListSign: false
+    })
+
+    setTimeout(() => {
+      this.setData({
+        songListBgSign: false
+      })
+    }, 500)
+    this.setData({
+      playFlag: true
+    })
   },
   // 阻止事件冒泡
   stopProgragh() {

@@ -1,6 +1,6 @@
 <!--pages/songsSheet/songsSheet.wxml-->
 <view class='container'>
-  <view class='sheet_cell' hover-class='sheet_hover' wx:for="{{ comData }}" wx:key="index">
+  <view class='sheet_cell' hover-class='sheet_hover' wx:for="{{ comData }}" wx:key="index" data-id="{{ item.id }}" bindtap="songDet">
     <view class='sheet_img'>
       <image lazy-load='true' src='{{ item.picUrl }}' mode='scaleToFill'>
 

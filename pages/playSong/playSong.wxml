@@ -41,11 +41,12 @@
           wx:key="index"
           catchtap="playing" 
           data-id="{{ item.id }}"
+          data-index="{{ index }}"
         >
           <!-- <image></image> -->
           <image src="{{ item.album.picUrl }}"></image>
           <view class="song_name">
-            <text>{{ item.album.name }}</text>
+            <text>{{ item.name }}</text>
             <view class="song_singer">- {{ item.artists[0].name }}</view>
           </view>
         </view>

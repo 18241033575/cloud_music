@@ -11,13 +11,13 @@
         </view>
 
       </view>
-      <view class="vip">
+      <view class="vip" bindtap="openVip">
         开通黑胶VIP >
       </view>
     </view>
     <!-- 我的  导航 -->
     <view class="user_nav">
-      <view class="user_cell" wx:for="{{ userNav }}" wx:key="index">
+      <view class="user_cell" wx:for="{{ userNav }}" wx:key="index" data-id="{{ item.id }}" bindtap="operate">
         <view class="nav_icon">
           <image src="{{ item.url }}"></image>
         </view>

@@ -45,7 +45,7 @@
       </image> 歌曲列表
       <text class='second'>(共{{ songs.tracks.length }}首)</text>
     </view>
-    <view class='song_det' wx:for="{{ songs.tracks }}" wx:key="{{ index }}">
+    <view class='song_det' wx:for="{{ songs.tracks }}" wx:key="index" data-id="{{ item.id }}" bindtap="play">
       <view class='song_index'>{{ index + 1 }}</view>
       <view class='song_msg'>
         <view class='song_name'>

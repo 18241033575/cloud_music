@@ -70,5 +70,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 播放歌曲
+  play(e) {
+    let id = e.currentTarget.dataset.id;
+    if (id) {
+      wx.setStorageSync('playList', { id: id, songs: this.data.songs.tracks })
+    } else {
+      wx.setStorageSync('playList', { id: this.data.songs.tracks[0].id, songs: this.data.songs.tracks })
+    }
+    wx.navigateTo({
+      url: '/pages/playSong/playSong',
+    })
   }
 })

@@ -70,5 +70,12 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  // 歌单详情 
+  // songDet(e) {
+  //   let id = e.currentTarget.dataset.id;
+  //   wx.navigateTo({
+  //     url: '/pages/dailyRecommend/dailyRecommend?id=1'
+  //   })
+  // }
 })

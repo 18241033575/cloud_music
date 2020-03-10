@@ -23,7 +23,7 @@
           </view>
           <view class="song">
             <view class="singMsg">
-              <view class="songName">{{ item.album.name }}</view>
+              <view class="songName">{{ item.name }}</view>
               <view class="singer">{{ item.artists[0].name }}</view>
             </view>
             <view class="play">

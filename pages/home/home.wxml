@@ -22,11 +22,11 @@
       <image src='/images/ic_menu_03.png'></image>
       <view>排行榜</view>
     </view>
-    <view class='cate_cell'>
+    <view class='cate_cell' bindtap='village'>
       <image src='/images/ic_menu_04.png'></image>
       <view>电台</view>
     </view>
-    <view class='cate_cell'>
+    <view class='cate_cell' bindtap='video'>
       <image src='/images/ic_menu_05.png'></image>
       <view>直播</view>
     </view>
@@ -35,7 +35,7 @@
   <view class='song_list'>
     <view class='list_title'>
       <view class='title'>推荐歌单</view>
-      <view class='songs_center'>歌单广场</view>
+      <view class='songs_center' bindtap='songsSheet'>歌单广场</view>
     </view>
     <view class='list_body'>
       <view class='cell' wx:for="{{ commendSongs }}" wx:key="index">

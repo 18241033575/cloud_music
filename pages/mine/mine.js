@@ -7,12 +7,12 @@ Page({
    */
   data: {
     userNav: [
-      { url: '/images/music.png', name: '本地音乐'},
-      { url: '/images/down.png', name: '下载管理' },
-      { url: '/images/video.png', name: '我的电台' },
-      { url: '/images/star.png', name: '我的收藏' },
-      { url: '/images/focus.png', name: '关注新歌' }
-      ],
+      { url: '/images/music.png', name: '本地音乐', id: 'localMusic' },
+      { url: '/images/down.png', name: '下载管理', id: 'download' },
+      { url: '/images/video.png', name: '我的电台', id: 'myVideo' },
+      { url: '/images/star.png', name: '我的收藏', id: 'collect' },
+      { url: '/images/focus.png', name: '关注新歌', id: 'newSongs' }
+    ],
     newSongs: [],
     name: '点击登录',
     userInfo: {},
@@ -45,7 +45,7 @@ Page({
    */
   onShow: function () {
     let user = wx.getStorageSync('USER');
-    if(user) {
+    if (user) {
       this.setData({
         userInfo: user,
         name: user.profile.nickname,
@@ -91,10 +91,45 @@ Page({
 
 
   login() {
-    if(!this.data.userInfo.account) {
+    if (!this.data.userInfo.account) {
       wx.navigateTo({
         url: '/pages/login/login',
       })
     }
+  },
+  // 电台 - 云村电台
+  village() {
+    wx.switchTab({
+      url: '/pages/village/village',
+    })
+  },
+  // 操作单元
+  operate(e) {
+    switch (e.currentTarget.dataset.id) {
+      case 'myVideo':
+        wx.switchTab({
+          url: '/pages/village/village',
+        })
+        break;
+      default:
+        wx.showToast({
+          title: '敬请期待',
+          icon: 'none'
+        })
+        break;
+        setTimeout(() => {
+          wx.hideToast();
+        }, 1000)
+    }
+  },
+  // 开通VIP
+  openVip() {
+    wx.showToast({
+      title: '敬请期待',
+      icon: 'none'
+    })
+    setTimeout(() => {
+      wx.hideToast();
+    }, 1000)
   }
 })
