@@ -17,10 +17,24 @@ Page({
     let params = {}
     params.url = '/playlist/detail?id=' + options.id;
     reqUrl(params).then((res) => {
+      res.data.playlist.tracks.forEach(item => {
+        item.id = item.al.id;
+        item.album = item.al;
+        item.album.blurPicUrl = item.album.picUrl;
+      })
       this.setData({
         songs: res.data.playlist
       })
     });
+    // this.data.playlist.forEach(item => {
+    //   let songParam = {}
+    //   params.url = '/playlist/detail?id=' + options.id;
+    //   reqUrl(params).then((res) => {
+    //     this.setData({
+    //       songs: res.data.playlist
+    //     })
+    //   });
+    // })
   },
 
   /**
