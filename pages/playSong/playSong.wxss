@@ -49,7 +49,7 @@
   border-radius: 100px;
   background-color: #222;
   text-align: center;
-  
+  box-shadow: 1px 0 2px #ddd;
 }
 
 .coverImg image {
@@ -80,16 +80,21 @@
 .btn_cell image {
   width: 24px;
   height: 24px;
+  border-radius: 12px; 
+  box-shadow: 1px 1px 3px #333;
 }
 .btn_cell .playImg {
   width: 48px;
   height: 48px;
+  border-radius: 24px;
 }
 .btn_cell .next_song {
   width: 30px;
   height: 30px;
+  border-radius: 15px;
 }
 .btn_cell .play_list {
+  padding: 3px;
   width: 20px;
   height: 20px;
 }
