@@ -47,9 +47,16 @@ Page({
       let params = {}
       params.url = '/video/group/list'
       reqUrl(params).then((res) => {
-        this.setData({
-          navList: res.data.data
-        })
+        if (res.statusCode === 200) {
+          this.setData({
+            navList: res.data.data
+          })
+        } else if (res.statusCode === 301) {
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+        }
+        
       
         this.getVideo(res.data.data[50].id);
       });

@@ -40,6 +40,10 @@ Page({
         this.setData({
           songList: res.data.data.dailySongs
         })
+      } else if (res.statusCode === 301) {
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
       }
     });
   },
